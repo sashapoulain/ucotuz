@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-// Örnek logo importları (bunları kendi logolarınızla değiştirin)
 import logo1 from "../assets/images/brands/puma.png";
 import logo2 from "../assets/images/brands/apple.jpg";
 import logo3 from "../assets/images/brands/adidas.jpg";
@@ -42,25 +41,25 @@ const BrandCarousel = () => {
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 8,
+          slidesToShow: 11,
         },
       },
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 11,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 9,
         },
       },
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
         },
       },
     ],
@@ -74,8 +73,8 @@ const BrandCarousel = () => {
             <div
               className="rounded-circle border d-flex justify-content-center align-items-center bg-white"
               style={{
-                width: 85,
-                height: 85,
+                width: 90,
+                height: 90,
                 overflow: "hidden",
               }}
             >

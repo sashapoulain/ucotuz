@@ -1,45 +1,42 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal, Button, Form } from "reactstrap";
-import proImg from "../assets/images/products/applewatch.webp";
+import proImg from "../assets/images/products/applewatch.png";
+import procontlogo from "../assets/images/products/procontlogo.png";
 import Thumbs from "../components/Thumbs";
 import heart from "../assets/images/products/heart.png";
+import Breadcrumb from "./BreadCrumb";
+import { Home } from "lucide-react";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import ProductTabs from "./ProductTabs";
+import FaqSection from "./FaqSection";
 
 const ProductDetail = () => {
-  const [showModal, setShowModal] = useState(false);
-  const handleModal = () => setShowModal(!showModal);
-  const [selectedImage, setSelectedImage] = useState(proImg); // default image
-
+  const [selectedImage, setSelectedImage] = useState(proImg);
+  const breadcrumbItems = [
+    { icon: <Home size={18} />, href: "/", label: null },
+    { label: "Ahşap", href: "/ahsap" },
+    { label: "Mobilya", href: "/mobilya" },
+    { label: "Kabin Makinası" },
+  ];
   return (
     <div className="container mt-4">
       <div className="row">
-        {/* Breadcrumb */}
-        <nav aria-label="breadcrumb">
-          <ol className="breadcrumb">
-            <li className="breadcrumb-item">
-              <a href="#">Ahşap</a>
-            </li>
-            <li className="breadcrumb-item">
-              <a href="#">Mobilya</a>
-            </li>
-            <li className="breadcrumb-item active" aria-current="page">
-              Kabin Makinası
-            </li>
-          </ol>
-        </nav>
-
+        <Breadcrumb items={breadcrumbItems} />
+      </div>
+      <div
+        className="row pt-5"
+        style={{ background: "#f8f9fa", borderRadius: "0.5rem" }}
+      >
         <div className="col-md-5 position-relative">
           <img
             src={selectedImage}
-            className="img-fluid rounded"
-            style={{
-              width: "100%",
-              height: "600px",
-              objectFit: "contain",
-              padding: "10px",
-              border: "1px solid #ddd",
-            }}
+            className="img-fluid rounded pro-img"
             alt="Product"
+            style={{
+              border: "3px solid #dddddd",
+              background: "white",
+            }}
           />
           <button
             className="btn btn-light"
@@ -55,146 +52,102 @@ const ProductDetail = () => {
           </button>
           <div className="d-flex mt-3 products-thumbs">
             <Thumbs onSelect={setSelectedImage} />
-            {/* {[1, 2, 3, 4].map((i) => (
-              <img key={i} src={`/images/product-thumb-${i}.jpg`} className="img-thumbnail me-2" alt={`thumb-${i}`} width={70} />
-            ))} */}
           </div>
         </div>
 
-        {/* Ürün Bilgileri */}
         <div className="col-md-4">
           <h4>Kapı Kasa Ve Pervaz Boyama Kabini ve Makinası</h4>
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center mb-2">
             <span className="text-warning">★★★★★</span>
             <small className="ms-2 text-success">(76)</small>
             <span className="ms-3">Görüntülenme (5)</span>
           </div>
-
-          <table className="table table-borderless mt-3 detail-table ">
-            <tbody>
-              <tr className="table-secondary" >
-                <td>Marka</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
-              <tr className="table-secondary">
-                <td>Durumu</td>
-                <td>:</td>
-                <td className="text-success">Yeni</td>
-              </tr>
-              <tr className="table-secondary" >
-                <td>İlan No</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
-              <tr className="table-secondary"  >
-                <td>Kimden</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
-              <tr className="table-secondary" >
-                <td>Kategori</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
-              <tr className="table-secondary" >
-                <td>İlan Tarihi</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
-              <tr className="table-secondary" >
-                <td>Yılı</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
-              <tr className="table-secondary" >
-                <td>Adet</td>
-                <td>:</td>
-                <td>-</td>
-              </tr>
-              <tr className="table-secondary" >
-                <td>Fiyat</td>
-                <td>:</td>
-                <td>24.000 TL / Dolar / Euro</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="detail-table-wrapper">
+            <table className="table table-borderless detail-table mb-0">
+              <tbody>
+                <tr>
+                  <td>Marka</td>
+                  <td>:</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Durumu</td>
+                  <td>:</td>
+                  <td className="text-success">Yeni</td>
+                </tr>
+                <tr>
+                  <td>İlan No</td>
+                  <td>:</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Kimden</td>
+                  <td>:</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Kategori</td>
+                  <td>:</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>İlan Tarihi</td>
+                  <td>:</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Yılı</td>
+                  <td>:</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Adet</td>
+                  <td>:</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>Fiyat</td>
+                  <td>:</td>
+                  <td>24.000 TL / Dolar / Euro</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
-        {/* Satıcı Bilgileri */}
         <div className="col-md-3">
-          <div className="border p-3 rounded mb-3">
-            <h6>Şirket Bilgisi</h6>
+          <div className="p-3  mb-3 pro-contact">
+           <div className="text-center mt-2 mb-2">
+           <img src={procontlogo} alt="" style={{width: 100}}/>
+            <h6 className="fw-bold pt-2">Soylu otomasyon 
+            <br />
+            san tic ltd şti</h6>
+           </div>
+           <hr />
             <p className="mb-1">
-              <strong>Şehir:</strong> Antalya
+              <strong>İletişim</strong> 
             </p>
             <p className="mb-1">
-              <strong>Adres:</strong> 555 Sokak, KAFE YANI MERKEZ
+              <strong><FaPhoneAlt size={16} /></strong> +90 212 564 5858
             </p>
             <p className="mb-1">
-              <strong>Telefon:</strong> 0532 456 88 88
+              <strong><IoLogoWhatsapp size={18}/></strong> 0532 456 88 88
             </p>
-            <button className="btn btn-outline-success btn-sm w-100">
+            <hr />
+            <button className="btn btn-outline-success btn-sm w-100 fw-bold mb-2" style={{borderRadius: 20}}>
               MAĞAZAYA GİT
             </button>
-          </div>
-
-          <div className="border p-3 rounded mb-3">
-            <h6>Satıcının Diğer Ürünleri</h6>
-            <ul className="list-unstyled">
-              {Array(5)
-                .fill("Ahşap kesme makinesi")
-                .map((item, idx) => (
-                  <li key={idx}>
-                    <a href="#">{item}</a>
-                  </li>
-                ))}
-            </ul>
-            <button className="btn btn-outline-secondary btn-sm w-100 mb-2">
-              TÜMÜNÜ GÖR
+            <button className="btn btn-outline-success btn-sm w-100 fw-bold mb-2" style={{borderRadius: 20}}>
+              TÜM İLANLAR
             </button>
-            <button
-              className="btn btn-danger btn-sm w-100"
-              onClick={handleModal}
-            >
+            <button className="btn btn-outline-success btn-sm w-100 fw-bold mb-2" style={{borderRadius: 20}}>
               HATA BİLDİRİMİ
             </button>
           </div>
         </div>
       </div>
-
-      {/* Pop-up modal */}
-      {/* <Modal show={showModal} onHide={handleModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Hata Bildir</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>İsim</Form.Label>
-              <Form.Control type="text" placeholder="İsminizi girin" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Soyad</Form.Label>
-              <Form.Control type="text" placeholder="Soyadınızı girin" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>E-posta</Form.Label>
-              <Form.Control type="email" placeholder="E-posta adresiniz" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Mesaj</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Mesajınız" />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleModal}>
-            İptal
-          </Button>
-          <Button variant="primary">Gönder</Button>
-        </Modal.Footer>
-      </Modal> */}
+      <ProductTabs />
+    <FaqSection showTitle={true} />
     </div>
   );
 };

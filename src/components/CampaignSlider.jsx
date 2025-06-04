@@ -8,13 +8,13 @@ import banner3 from "../assets/images/slider/banner-img.png";
 
 const sliderItems = [
   {
-    title: "LASSA ÜRÜNLERİNDE 1.slider",
+    title: "",
     discount: "SEPETTE %20 İNDİRİM",
     description: "Yüksek performans, yüksek tasarruf şimdi seni bekliyor2!",
     image: banner1,
   },
   {
-    title: "MICHELIN KAMPANYASI 2.slider",
+    title: "",
     discount: "SEPETTE %25 İNDİRİM",
     description: "Yüksek performans, yüksek tasarruf şimdi seni bekliyor!",
     image: banner2,
@@ -45,7 +45,7 @@ const CampaignSlider = () => {
         {sliderItems.map((item, index) => (
           <div key={index} className="container p-0">
             <div className="row align-items-center p-0">
-              <div className="col-12 col-md-5">
+              <div className="col-12 col-md-5 campain-text-wrapper">
                 <div className="campaign-text">
                   <h5>{item.title}</h5>
                   <h2>{item.discount}</h2>

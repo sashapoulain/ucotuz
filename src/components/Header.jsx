@@ -1,150 +1,357 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { User, Search, Globe } from "lucide-react";
+import { isMobile } from "react-device-detect";
 import logo from "../assets/images/logo.png";
-import searchIcon from "../assets/images/searchicon.png";
-import productsIcon from "../assets/images/elements.png";
-import "../assets/css/style.css";
+import { Link } from "react-router-dom";
 
-const Header = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [productsMenuOpen, setProductsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+export default function Header() {
+  const [language, setLanguage] = useState("TR");
+  const [categoriesOpen, setCategoriesOpen] = useState(false);
+  const [activeMainCategory, setActiveMainCategory] = useState(0);
+  const [offcanvasOpen, setOffcanvasOpen] = useState(false);
+  const [expandedCategory, setExpandedCategory] = useState(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+  const categories = [
+    {
+      name: "Elektronik",
+      sub: ["Telefon", "Bilgisayar", "TV"],
+    },
+    {
+      name: "Moda",
+      sub: ["Kadın", "Erkek", "Çocuk"],
+    },
+    {
+      name: "Ev & Yaşam",
+      sub: ["Mobilya", "Dekorasyon", "Mutfak"],
+    },
+  ];
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const handleLanguageChange = (lang) => setLanguage(lang);
+  const toggleCategory = (index) => {
+    setExpandedCategory((prev) => (prev === index ? null : index));
+  };
 
   return (
-    <header className="border-bottom shadow-sm">
-      <div className="top-menu-wrapper">
-        <div className="top-menu-wrapper-alt container py-2 d-flex justify-content-between small">
-          <a href="#" className="text-decoration-none text-light">Anasayfa</a>
-          <a href="#" className="text-decoration-none text-light">Sıkça Sorulan Sorular</a>
-          <a href="#" className="text-decoration-none text-light">Yardım Merkezi</a>
-          <a href="#" className="text-decoration-none text-light">İade Politikası</a>
-        </div>
-      </div>
+    <header>
+      {isMobile && (
+        <div className="d-block d-md-none border-bottom shadow-sm">
+          <div className="d-flex justify-content-between align-items-center px-3 py-2">
+            <div className="d-flex align-items-center gap-2">
+              <button
+                className="btn btn-link text-dark fw-semibold p-0"
+                onClick={() => setOffcanvasOpen(true)}
+              >
+                ☰ Menü
+              </button>
+              <Link to="/">
+                <img
+                  src={logo}
+                  alt="Logo"
+                  height="45"
+                  style={{ cursor: "pointer" }}
+                />
+              </Link>
+            </div>
+            <div className="d-flex align-items-center gap-3">
+              <Link to='/giris' className="text-decoration-none text-dark d-flex align-items-center gap-1">
+                <User size={18} />
+              </Link>
 
-      <div className="container py-3 d-flex justify-content-between align-items-center bg-white">
-        <div className="d-flex align-items-center gap-3 header-left">
-          <img src={logo} alt="Logo" style={{ height: "40px" }} />
-          <a href="#" className="text-decoration-none text-dark small">Blog</a>
-          <a href="#" className="text-decoration-none text-dark small">İlan</a>
-        </div>
 
-        <div className="input-group w-25">
-          <input
-            type="text"
-            className="form-control form-control-sm"
-            placeholder="Ürün veya Markayı Yazınız.."
-          />
-          <span className="input-group-text bg-white">
-            <img src={searchIcon} alt="Ara" style={{ width: "16px" }} />
-          </span>
-        </div>
-
-        <div className="align-items-center gap-3 header-right d-flex">
-          <button className="btn btn-outline-success btn-sm">MAĞAZANI AÇ</button>
-
-          <button
-            className="btn btn-success btn-sm d-flex flex-column align-items-center px-3 py-1"
-            style={{ fontWeight: "bold", fontSize: "13px", lineHeight: "1" }}
-          >
-            GİRİŞ YAP
-            <small style={{ fontSize: "10px", fontWeight: "normal" }}>veya kayıt ol</small>
-          </button>
-
-          <div className="position-relative language-dropdown">
-            <button
-              onClick={toggleDropdown}
-              className="btn btn-success text-white fw-bold btn-sm language-button"
-            >
-              TR <span className="ms-1">&#x25BC;</span>
-            </button>
-
-            {dropdownOpen && (
-              <div className="language-menu">
-                <button className="dropdown-item" onClick={() => alert("Dil TR seçildi")}>TR</button>
-                <button className="dropdown-item" onClick={() => alert("Dil EN seçildi")}>EN</button>
-                <button className="dropdown-item" onClick={() => alert("Dil DE seçildi")}>DE</button>
+              <div className="dropdown">
+                <button
+                  className="btn btn-outline-success dropdown-toggle btn-sm d-flex align-items-center gap-1"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  <Globe size={16} />
+                  {language}
+                </button>
+                <ul className="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("TR")}
+                    >
+                      Türkçe
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("EN")}
+                    >
+                      English
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("DE")}
+                    >
+                      Deutsch
+                    </button>
+                  </li>
+                </ul>
               </div>
-            )}
+            </div>
           </div>
-        </div>
-      </div>
 
-      <nav>
-        <div className="container d-flex justify-content-between gap-5 py-4">
-          <div
-            className="products"
-            onMouseEnter={() => !isMobile && setProductsMenuOpen(true)}
-            onMouseLeave={() => !isMobile && setProductsMenuOpen(false)}
-          >
-            <a
-              href="#"
-              className="text-decoration-none text-dark small d-flex align-items-center gap-1"
-              onClick={(e) => {
-                if (isMobile) {
-                  e.preventDefault();
-                  setProductsMenuOpen(!productsMenuOpen);
-                }
-              }}
-            >
-              <img
-                src={productsIcon}
-                alt="Ürünler"
-                style={{ height: "16px", width: "16px" }}
+          <div className="px-3 pb-2">
+            <div className="input-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Aradığınız ürün, kategori veya markayı yazınız"
               />
-              Ürünler
-            </a>
-
-            {productsMenuOpen && (
-  <div className="altmenu">
-    <div className="altmenu-inner">
-      <div className="altmenu-column">
-        <h6 className="fw-bold mb-2">Elektronik</h6>
-        <a href="#" className="dropdown-item small">Telefonlar</a>
-        <a href="#" className="dropdown-item small">Tabletler</a>
-        <a href="#" className="dropdown-item small">Aksesuarlar</a>
-      </div>
-
-      <div className="altmenu-column">
-        <h6 className="fw-bold mb-2">Bilgisayar</h6>
-        <a href="#" className="dropdown-item small">Dizüstü</a>
-        <a href="#" className="dropdown-item small">Masaüstü</a>
-        <a href="#" className="dropdown-item small">Parçalar</a>
-      </div>
-
-      <div className="altmenu-column">
-        <h6 className="fw-bold mb-2">Giyim</h6>
-        <a href="#" className="dropdown-item small">Kadın</a>
-        <a href="#" className="dropdown-item small">Erkek</a>
-        <a href="#" className="dropdown-item small">Çocuk</a>
-      </div>
-    </div>
-  </div>
-)}
-
+              <span className="input-group-text bg-white">
+                <Search size={16} />
+              </span>
+            </div>
           </div>
 
-          <a href="#" className="text-dark text-decoration-none small">Ürün</a>
-          <a href="#" className="text-dark text-decoration-none small">Tablet & Telefon</a>
-          <a href="#" className="text-dark text-decoration-none small">Aksesuar</a>
-          <a href="#" className="text-dark text-decoration-none small">Mağazalar</a>
-          <a href="#" className="text-dark text-decoration-none small">Elektronik</a>
-          <a href="#" className="text-dark text-decoration-none small">Bilgisayar & Ofis</a>
-          <a href="#" className="text-dark text-decoration-none small">İş İlanları</a>
-          <a href="#" className="text-dark text-decoration-none small">Diğerleri %10</a>
+          <div className="d-flex overflow-auto px-3 pb-2 gap-3 scroll-menu">
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Kadın
+            </a>
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Erkek
+            </a>
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Anne & Çocuk
+            </a>
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Ev & Yaşam
+            </a>
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Süpermarket
+            </a>
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Kozmetik
+            </a>
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Ayakkabı & Çanta
+            </a>
+            <a className="text-decoration-none text-dark fw-semibold" href="#">
+              Elektronik
+            </a>
+          </div>
         </div>
-      </nav>
+      )}
+
+      {!isMobile && (
+        <>
+
+          <div className="container">
+            <div className="d-flex justify-content-end px-4 small gap-3 border-bottom top-menu">
+              <Link to="/">Anasayfa</Link>
+              <Link to="/blog" >Blog</Link>
+              <Link to="/ilanlar">İlanlar</Link>
+              <Link to="/sss">Sıkça Sorulan Sorular</Link>
+              <Link to="/magaza">Mağaza Aç</Link>
+              <Link to="/yardim">Yardım & Destek</Link>
+              <Link to="/iade-politikasi">İade Politikası</Link>
+            </div>
+          </div>
+
+          <div className="container py-3 d-flex align-items-center justify-content-between">
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Logo"
+                height="45"
+                style={{ cursor: "pointer" }}
+              />
+            </Link>
+
+            <div className="input-group w-50">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Aradığınız ürün, kategori veya markayı yazınız"
+              />
+              <span className="input-group-text bg-white">
+                <Search size={16} />
+              </span>
+            </div>
+
+            <div className="d-flex align-items-center gap-4">
+              <Link to="/giris" className="text-decoration-none text-dark d-flex align-items-center gap-1">  <User size={18} />
+                Giriş Yap</Link>
+
+              <div className="dropdown">
+                <button
+                  className="btn btn-lang dropdown-toggle d-flex align-items-center gap-1"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  <Globe size={16} />
+                  {language}
+                </button>
+                <ul className="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("TR")}
+                    >
+                      Türkçe
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("EN")}
+                    >
+                      English
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      className="dropdown-item"
+                      onClick={() => handleLanguageChange("DE")}
+                    >
+                      Deutsch
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <nav className="bg-light py-2 border-top">
+            <div className="container d-flex gap-3 align-items-center justify-content-between flex-wrap">
+              <div
+                className="position-relative" style={{paddingBottom: '0.25rem'}}
+                onMouseEnter={() => setCategoriesOpen(true)}
+                onMouseLeave={() => setCategoriesOpen(false)}
+              >
+                <button className="btn btn-link text-dark fw-semibold d-flex align-items-center gap-1 p-0">
+                  ☰ TÜM KATEGORİLER
+                </button>
+
+                {categoriesOpen && (
+                  <div className="mega-menu d-flex shadow">
+                    <ul className="list-group list-group-flush main-categories">
+                      {categories.map((cat, index) => (
+                        <li
+                          key={index}
+                          className={`list-group-item ${activeMainCategory === index ? "active" : ""
+                            }`}
+                          onMouseEnter={() => setActiveMainCategory(index)}
+                        >
+                          {cat.name}
+                        </li>
+                      ))}
+                    </ul>
+                    <ul className="list-group list-group-flush sub-categories">
+                      {categories[activeMainCategory].sub.map((sub, idx) => (
+                        <li key={idx} className="list-group-item">
+                          <a
+                            href="#"
+                            className="text-decoration-none text-dark"
+                          >
+                            {sub}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Kadın
+              </a>
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Erkek
+              </a>
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Anne & Çocuk
+              </a>
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Ev & Yaşam
+              </a>
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Süpermarket
+              </a>
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Kozmetik
+              </a>
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Ayakkabı & Çanta
+              </a>
+              <a
+                className="nav-link-tab text-decoration-none text-dark fw-semibold"
+                href="#"
+              >
+                Elektronik
+              </a>
+            </div>
+          </nav>
+        </>
+      )}
+
+      {isMobile && offcanvasOpen && (
+        <div
+          className="offcanvas offcanvas-start show d-block bg-white"
+          tabIndex="-1"
+          style={{ zIndex: 2000 }}
+        >
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title">Tüm Kategoriler</h5>
+            <button
+              type="button"
+              className="btn-close"
+              onClick={() => setOffcanvasOpen(false)}
+            ></button>
+          </div>
+          <div className="offcanvas-body">
+            {categories.map((cat, index) => (
+              <div key={index} className="mb-2">
+                <button
+                  className="btn w-100 text-start text-dark fw-semibold"
+                  onClick={() => toggleCategory(index)}
+                  aria-expanded={expandedCategory === index}
+                >
+                  {cat.name}
+                </button>
+                {expandedCategory === index && (
+                  <ul className="list-group ps-3">
+                    {cat.sub.map((sub, idx) => (
+                      <li key={idx} className="list-group-item border-0 ps-4">
+                        <a href="#" className="text-decoration-none text-dark">
+                          {sub}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}

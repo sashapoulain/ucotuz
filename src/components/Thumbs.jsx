@@ -21,15 +21,15 @@ const Thumbs = ({onSelect}) => {
     arrows: true,
     responsive: [
       {
-        breakpoint: 768, // mobilde 2 göster
+        breakpoint: 768, 
         settings: {
           slidesToShow: 2,
         }
       },
       {
-        breakpoint: 480, // çok küçük ekranlarda 1 göster
+        breakpoint: 480, 
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 4,
         }
       }
     ]
