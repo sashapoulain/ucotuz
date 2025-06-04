@@ -726,7 +726,11 @@ footer li a {
 }
 
 /*slickslider css*/
-
+@media (min-width: 1400px) {
+    .campaign-slider-wrapper.container {
+        max-width: 1300px;
+    }
+}
 
 
 @media (max-width: 768px) {
