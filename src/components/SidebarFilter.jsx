@@ -9,44 +9,44 @@ const SidebarFilter = () => {
   const [maxPrice, setMaxPrice] = useState("");
   const [selectedRating, setSelectedRating] = useState(null);
 
-const [categorySearch, setCategorySearch] = useState("");
+  const [categorySearch, setCategorySearch] = useState("");
 
-const categories = [
-  {
-    name: "Elektronik",
-    subcategories: [
-      "Cep Telefonları",
-      "Bilgisayarlar",
-      "Tabletler",
-      "Aksesuarlar",
-      "Akıllı Saatler",
-      "Fotoğraf Makineleri",
-      "Drone",
-    ],
-  },
-  {
-    name: "Moda",
-    subcategories: [
-      "Kadın Giyim",
-      "Erkek Giyim",
-      "Çocuk Giyim",
-      "Ayakkabı",
-      "Çanta",
-      "Saat & Aksesuar",
-    ],
-  },
-  {
-    name: "Ev & Yaşam",
-    subcategories: [
-      "Mobilya",
-      "Ev Tekstili",
-      "Mutfak Eşyaları",
-      "Aydınlatma",
-      "Dekorasyon",
-      "Bahçe Ürünleri",
-    ],
-  },
-];
+  const categories = [
+    {
+      name: "Elektronik",
+      subcategories: [
+        "Cep Telefonları",
+        "Bilgisayarlar",
+        "Tabletler",
+        "Aksesuarlar",
+        "Akıllı Saatler",
+        "Fotoğraf Makineleri",
+        "Drone",
+      ],
+    },
+    {
+      name: "Moda",
+      subcategories: [
+        "Kadın Giyim",
+        "Erkek Giyim",
+        "Çocuk Giyim",
+        "Ayakkabı",
+        "Çanta",
+        "Saat & Aksesuar",
+      ],
+    },
+    {
+      name: "Ev & Yaşam",
+      subcategories: [
+        "Mobilya",
+        "Ev Tekstili",
+        "Mutfak Eşyaları",
+        "Aydınlatma",
+        "Dekorasyon",
+        "Bahçe Ürünleri",
+      ],
+    },
+  ];
 
 
   const sellerTypes = [
@@ -54,9 +54,9 @@ const categories = [
     "Başarılı Satıcı",
     "Yetkili Satıcı"
   ];
-  
+
   const [selectedSellerTypes, setSelectedSellerTypes] = useState([]);
-  
+
   const toggleSellerType = (type) => {
     setSelectedSellerTypes((prev) =>
       prev.includes(type)
@@ -64,7 +64,7 @@ const categories = [
         : [...prev, type]
     );
   };
-  
+
   const [modelSearch, setModelSearch] = useState("");
   const allModels = [
     "iPhone 13",
@@ -87,7 +87,7 @@ const categories = [
     );
   };
 
-  const sizes = ["S", "M", "M/L", "M/XL", "XL"];
+  // const sizes = ["S", "M", "M/L", "M/XL", "XL"];
 
   const allSizes = ["S", "M", "M/L", "M/XL", "XL"];
   const [selectedSizes, setSelectedSizes] = useState([]);
@@ -125,7 +125,7 @@ const categories = [
   const filteredColors = colors.filter((color) =>
     color.toLowerCase().includes(colorSearch.toLowerCase())
   );
- 
+
 
   const brands = [
     "Apple",
@@ -176,7 +176,7 @@ const categories = [
 
   return (
     <div className="accordion sidebar-accordion" id="sidebarAccordion">
-   <div className="accordion-item">
+     <div className="accordion-item">
   <h2 className="accordion-header" id="headingCategory">
     <button
       className="accordion-button"
@@ -203,7 +203,7 @@ const categories = [
         value={categorySearch}
         onChange={(e) => setCategorySearch(e.target.value)}
       />
-      <div style={{ maxHeight: "200px", overflowY: "auto" }}>
+      <div className="accordion" id="innerCategoryAccordion" style={{ maxHeight: "300px", overflowY: "auto" }}>
         {categories
           .filter(
             (cat) =>
@@ -212,28 +212,53 @@ const categories = [
                 sub.toLowerCase().includes(categorySearch.toLowerCase())
               )
           )
-          .map((cat, idx) => (
-            <div key={idx}>
-              <strong>{cat.name}</strong>
-              <ul className="list-unstyled ps-3">
-                {cat.subcategories
-                  .filter((sub) =>
-                    sub.toLowerCase().includes(categorySearch.toLowerCase())
-                  )
-                  .map((sub, subIdx) => (
-                    <li key={subIdx}>
-                      <a href="#" className="text-decoration-none small">
-                        {sub}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          ))}
+          .map((cat, idx) => {
+            const collapseId = `collapseInner${idx}`;
+            const headingId = `headingInner${idx}`;
+            return (
+              <div className="accordion-item" key={idx}>
+                <h2 className="accordion-header" id={headingId}>
+                  <button
+                    className="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#${collapseId}`}
+                    aria-expanded="false"
+                    aria-controls={collapseId} style={{padding: "1rem 0.5rem"}}
+                  >
+                    {cat.name}
+                  </button>
+                </h2>
+                <div
+                  id={collapseId}
+                  className="accordion-collapse collapse"
+                  aria-labelledby={headingId}
+                  data-bs-parent="#innerCategoryAccordion"
+                >
+                  <div className="accordion-body">
+                    <ul className="list-unstyled ps-3 mb-0">
+                      {cat.subcategories
+                        .filter((sub) =>
+                          sub.toLowerCase().includes(categorySearch.toLowerCase())
+                        )
+                        .map((sub, subIdx) => (
+                          <li key={subIdx}>
+                            <a href="#" className="text-decoration-none small">
+                              {sub}
+                            </a>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   </div>
 </div>
+
 
 
       <div className="accordion-item">
@@ -531,42 +556,42 @@ const categories = [
 
 
       <div className="accordion-item">
-  <h2 className="accordion-header" id="headingSellerType">
-    <button
-      className="accordion-button collapsed"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#collapseSellerType"
-      aria-expanded="false"
-      aria-controls="collapseSellerType"
-    >
-      Satıcı Tipi
-    </button>
-  </h2>
-  <div
-    id="collapseSellerType"
-    className="accordion-collapse collapse"
-    aria-labelledby="headingSellerType"
-    data-bs-parent="#sidebarAccordion"
-  >
-    <div className="accordion-body">
-      {sellerTypes.map((type, idx) => (
-        <div className="form-check" key={idx}>
-          <input
-            className="form-check-input"
-            type="checkbox"
-            checked={selectedSellerTypes.includes(type)}
-            onChange={() => toggleSellerType(type)}
-            id={`sellerType-${idx}`}
-          />
-          <label className="form-check-label" htmlFor={`sellerType-${idx}`}>
-            {type}
-          </label>
+        <h2 className="accordion-header" id="headingSellerType">
+          <button
+            className="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseSellerType"
+            aria-expanded="false"
+            aria-controls="collapseSellerType"
+          >
+            Satıcı Tipi
+          </button>
+        </h2>
+        <div
+          id="collapseSellerType"
+          className="accordion-collapse collapse"
+          aria-labelledby="headingSellerType"
+          data-bs-parent="#sidebarAccordion"
+        >
+          <div className="accordion-body">
+            {sellerTypes.map((type, idx) => (
+              <div className="form-check" key={idx}>
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  checked={selectedSellerTypes.includes(type)}
+                  onChange={() => toggleSellerType(type)}
+                  id={`sellerType-${idx}`}
+                />
+                <label className="form-check-label" htmlFor={`sellerType-${idx}`}>
+                  {type}
+                </label>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
 
     </div>
   );

@@ -26,7 +26,12 @@ const ProductDetail = () => {
       </div>
       <div
         className="row pt-5"
-        style={{ background: "#f8f9fa", borderRadius: "0.5rem" }}
+        style={{
+          background: "#f8f9fa",
+          borderRadius: "0.5rem",
+          marginRight: 0,
+          marginLeft: 0,
+        }}
       >
         <div className="col-md-5 position-relative">
           <img
@@ -117,37 +122,74 @@ const ProductDetail = () => {
 
         <div className="col-md-3">
           <div className="p-3  mb-3 pro-contact">
-           <div className="text-center mt-2 mb-2">
-           <img src={procontlogo} alt="" style={{width: 100}}/>
-            <h6 className="fw-bold pt-2">Soylu otomasyon 
-            <br />
-            san tic ltd şti</h6>
-           </div>
-           <hr />
-            <p className="mb-1">
-              <strong>İletişim</strong> 
-            </p>
-            <p className="mb-1">
-              <strong><FaPhoneAlt size={16} /></strong> +90 212 564 5858
-            </p>
-            <p className="mb-1">
-              <strong><IoLogoWhatsapp size={18}/></strong> 0532 456 88 88
-            </p>
+            <div className="text-center mt-2 mb-2">
+              <img src={procontlogo} alt="" style={{ width: 100 }} />
+              <h6 className="fw-bold pt-2">
+                Soylu otomasyon
+                <br />
+                san tic ltd şti
+              </h6>
+            </div>
             <hr />
-            <button className="btn btn-outline-success btn-sm w-100 fw-bold mb-2" style={{borderRadius: 20}}>
-              MAĞAZAYA GİT
+            <p className="mb-1">
+              <strong>İletişim</strong>
+            </p>
+            {/* <p className="mb-1">
+              <strong>
+                <FaPhoneAlt size={16} />
+              </strong>{" "}
+              +90 212 564 5858
+            </p>
+            <p className="mb-1">
+              <strong>
+                <FaPhoneAlt size={18} />
+              </strong>{" "}
+              0532 456 88 88
+            </p> */}
+
+            <p className="mb-1 phone-hover">
+  <strong>
+    <FaPhoneAlt size={16} />
+  </strong>{" "}
+  <span className="masked-phone">+90 212 xxx xx xx</span>
+  <span className="real-phone">+90 212 564 5858</span>
+</p>
+
+<p className="mb-1 phone-hover">
+  <strong>
+    <FaPhoneAlt size={18} />
+  </strong>{" "}
+  <span className="masked-phone">0532 xxx xx xx</span>
+  <span className="real-phone">0532 456 88 88</span>
+</p>
+
+            <hr />
+            <button
+              className="btn btn-outline-success btn-sm w-100 fw-bold mb-2"
+              style={{ borderRadius: 20 }}
+            >
+              <strong>
+                <IoLogoWhatsapp size={18} />
+              </strong>{" "}
+              0532 456 88 88
             </button>
-            <button className="btn btn-outline-success btn-sm w-100 fw-bold mb-2" style={{borderRadius: 20}}>
+            <button
+              className="btn btn-outline-success btn-sm w-100 fw-bold mb-2"
+              style={{ borderRadius: 20 }}
+            >
               TÜM İLANLAR
             </button>
-            <button className="btn btn-outline-success btn-sm w-100 fw-bold mb-2" style={{borderRadius: 20}}>
+            <button
+              className="btn btn-outline-success btn-sm w-100 fw-bold mb-2"
+              style={{ borderRadius: 20 }}
+            >
               HATA BİLDİRİMİ
             </button>
           </div>
         </div>
       </div>
       <ProductTabs />
-    <FaqSection showTitle={true} />
+      <FaqSection showTitle={true} />
     </div>
   );
 };

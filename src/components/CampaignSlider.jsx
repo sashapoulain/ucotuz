@@ -40,7 +40,7 @@ const CampaignSlider = () => {
   };
 
   return (
-    <div className="campaign-slider-wrapper container">
+    <div className="campaign-slider-wrapper container" style={{ paddingRight: '0', paddingLeft: '0'}}>
       <Slider {...settings}>
         {sliderItems.map((item, index) => (
           <div key={index} className="container p-0">

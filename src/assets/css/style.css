@@ -226,7 +226,17 @@
 /* ProductTab css */
 
 /*productdetail css*/
+.phone-hover .real-phone {
+  display: none;
+}
 
+.phone-hover:hover .masked-phone {
+  display: none;
+}
+
+.phone-hover:hover .real-phone {
+  display: inline;
+}
 
 .detail-table-wrapper {
   border: 3px solid #dddddd;
@@ -786,5 +796,27 @@ footer li a {
 
   .pro-contact {
     margin-top: 1rem;
+  }
+  .custom-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .custom-tabs .nav-item {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 0.5rem;
+  }
+
+  .custom-tabs .nav-link {
+    white-space: nowrap;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .custom-tabs::-webkit-scrollbar {
+    display: none;
   }
 }

@@ -144,7 +144,7 @@ export default function Header() {
 
           <div className="container">
             <div className="d-flex justify-content-end px-4 small gap-3 border-bottom top-menu">
-              <Link to="/">Anasayfa</Link>
+              {/* <Link to="/">Anasayfa</Link> */}
               <Link to="/blog" >Blog</Link>
               <Link to="/ilanlar">İlanlar</Link>
               <Link to="/sss">Sıkça Sorulan Sorular</Link>

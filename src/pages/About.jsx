@@ -4,7 +4,6 @@ import aboutimg from '../assets/images/about.jpg'
 const About = () => {
   return (
     <div className="container my-5 about">
-      {/* Hero Section */}
       <div className="text-center mb-5">
         <h1 className="about-title">Hakkımızda</h1>
         <p className="lead text-muted">
@@ -12,7 +11,6 @@ const About = () => {
         </p>
       </div>
 
-      {/* About Content */}
       <div className="row align-items-center mb-5">
         <div className="col-md-6">
           <h3 className="text-green">Biz Kimiz?</h3>

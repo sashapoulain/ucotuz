@@ -8,15 +8,18 @@ import thumb2 from "../assets/images/products/applewatch.webp";
 import thumb3 from "../assets/images/products/iphone.webp";
 import thumb4 from "../assets/images/products/applewatch.webp";
 import thumb5 from "../assets/images/products/applewatch.webp";
+import thumb6 from "../assets/images/products/applewatch.webp";
+import thumb7 from "../assets/images/products/applewatch.webp";
 
-const thumbs = [thumb1, thumb2, thumb3, thumb4, thumb5];
+
+const thumbs = [thumb1, thumb2, thumb3, thumb4, thumb5, thumb6, thumb7];
 
 const Thumbs = ({onSelect}) => {
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
     arrows: true,
     responsive: [
@@ -37,7 +40,7 @@ const Thumbs = ({onSelect}) => {
   
 
   return (
-    <div className="mt-3" style={{width: '100%'}}>
+    <div className="mt-3" style={{width: '100%', marginLeft: '1.5rem'}}>
       <Slider {...settings}>
         {thumbs.map((thumb, index) => (
           <div key={index} className="px-2">

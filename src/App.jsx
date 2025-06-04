@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
 import { Button } from 'reactstrap';
 import './assets/css/style.css';
@@ -14,9 +14,9 @@ import ProductDetail from "./components/ProductDetail";
 import Footer from './components/Footer';
 import FaqPage from './pages/FaqPage';
 import HelpPage from './pages/HelpPage';
-import ReturnPolicyPage from './pages/ReturnPolicyPage'
-import İlanlar from './pages/Category'
-import Contact from './pages/Contact'
+import ReturnPolicyPage from './pages/ReturnPolicyPage';
+import Category from './pages/Category';
+import Contact from './pages/Contact';
 import About from './pages/About';
 import Whoweare from './pages/Whoweare';
 import TeamMembers from './pages/TeamMembers'
@@ -52,7 +52,7 @@ function App() {
         <Route path="/sss" element={<FaqPage />} />
         <Route path="/yardim" element={<HelpPage />} />
         <Route path="/iade-politikasi" element={<ReturnPolicyPage />} />
-        <Route path="/ilanlar" element={<İlanlar />} />
+        <Route path="/ilanlar" element={<Category />} />
         <Route path="/iletisim" element={<Contact />} />
         <Route path="/hakkimizda" element={<About />} />
         <Route path="/bizkimiz" element={<Whoweare />} />
