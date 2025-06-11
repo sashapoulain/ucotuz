@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SidebarFilter from "../components/SidebarFilter";
+import SidebarFilter from "../components/SidebarFilter/SidebarFilter";
 // import airpodsImg from "../assets/images/products/airpods.jpg";
 // import iphoneImage from "../assets/images/products/iphone.webp";
 // import applewatchImage from "../assets/images/products/applewatch.webp";
@@ -8,32 +8,7 @@ import ProductCard from "../components/ProductCard";
 import SponsoredSeller from "../components/SponsoredSeller";
 
 const Category = () => {
-  // const sponsoredProducts = [
-  //   {
-  //     title: "Apple AirPods Pro",
-  //     image: airpodsImg,
-  //     reviewCount: 76,
-  //     price: "49.999",
-  //   },
-  //   {
-  //     title: "Apple iPhone 15",
-  //     image: iphoneImage,
-  //     reviewCount: 120,
-  //     price: "89.999",
-  //   },
-  //   {
-  //     title: "Apple Watch Series 9",
-  //     image: applewatchImage,
-  //     reviewCount: 34,
-  //     price: "29.999",
-  //   },
-  //   {
-  //     title: "AirPods Max",
-  //     image: airpodsImg,
-  //     reviewCount: 22,
-  //     price: "59.999",
-  //   },
-  // ];
+  
 
   return (
     <div className="container mt-4">
@@ -72,3 +47,4 @@ const Category = () => {
 };
 
 export default Category;
+

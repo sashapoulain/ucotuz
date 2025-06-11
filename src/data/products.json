@@ -1,0 +1,560 @@
+[
+  {
+    "id":1,
+    "imageUrl": "airpods.jpg",
+    "altTitle": "Kulaklık",
+    "title": "Apple AirPods ProApple AirPods Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123456",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Kulaklık",
+    "listingDate": "2025-05-01",
+    "year": "2025",
+    "quantity": 10,
+    "priceDetails": "22.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 5,
+    "rating": 4.5,
+    "images": ["airpods.jpg", "applewatch.png", "iphone.webp", "airpods.jpg", "airpods.jpg","airpods.jpg", "airpods.jpg", "airpods.jpg", "airpods.jpg"],
+    "logoUrl": "procontlogo.png",
+     "description": "Bu ürün, ahşap kapı kasa ve pervazlarının profesyonelce boyanması için tasarlanmış endüstriyel bir makinedir. Tam otomatik boya püskürtme sistemi, paslanmaz çelik gövde ve 220V / 380V enerji ile çalışabilir. Tüm parçalar CE belgeli olup Türkiye'nin her yerine sevkiyat yapılır.",
+
+  "reviews": [
+    {
+      "author": "Ahmet Y.",
+      "rating": 5,
+      "text": "Ürün beklediğimden kaliteli. Hızlı kargo ve sağlam paketleme için teşekkürler."
+    },
+    {
+      "author": "Elif K.",
+      "rating": 4,
+      "text": "Kullanımı kolay ve verimli bir makina. Ancak kurulum için daha detaylı bilgi olabilirdi."
+    },
+    {
+      "author": "Mehmet B.",
+      "rating": 5,
+      "text": "Satıcı ilgiliydi. Ürün tam anlatıldığı gibi. Tavsiye ederim."
+    }
+  ],
+
+  "location": {
+    "address": "İkitelli OSB Mah. Eski Turgut Özal Cd. No:88, Başakşehir / İstanbul",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12033.2462220389!2d28.793055!3d41.070474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3a17869e217%3A0xd7c1d853930f83aa!2zxLBraXRlbGxpIE9yZ2FuaXplIFNhbiBhew!5e0!3m2!1str!2str!4v1685555555555"
+  },
+
+  "documents": [
+    {
+      "title": "Ürün Kataloğu",
+      "url": "/docs/urun-katalogu.pdf"
+    },
+    {
+      "title": "Kullanım Kılavuzu",
+      "url": "/docs/kullanim-kilavuzu.pdf"
+    },
+    {
+      "title": "CE Sertifikası",
+      "url": "/docs/ce-sertifikasi.pdf"
+    }
+  ]
+  },
+  {
+    "id": 2,
+    "imageUrl": "iphone.webp",
+    "altTitle": "Telefon",
+    "title": "Apple iPhone Pro Apple iPhone Pro",
+    "price": "59.999",
+    "reviewCount": 78,
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123457",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Telefon",
+    "listingDate": "2025-05-02",
+    "year": "2025",
+    "quantity": 5,
+    "priceDetails": "23.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 8,
+    "rating": 4.7,
+    "images": ["iphone.webp", "applewatch.png", "airpods.jpg", "iphone.webp", "iphone.webp","iphone.webp", "iphone.webp", "iphone.webp", "iphone.webp"],
+    "logoUrl": "procontlogo.png",
+     "description": "Bu ürün, ahşap kapı kasa ve pervazlarının profesyonelce boyanması için tasarlanmış endüstriyel bir makinedir. Tam otomatik boya püskürtme sistemi, paslanmaz çelik gövde ve 220V / 380V enerji ile çalışabilir. Tüm parçalar CE belgeli olup Türkiye'nin her yerine sevkiyat yapılır.",
+
+  "reviews": [
+    {
+      "author": "Ahmet Y.",
+      "rating": 5,
+      "text": "Ürün beklediğimden kaliteli. Hızlı kargo ve sağlam paketleme için teşekkürler."
+    },
+    {
+      "author": "Elif K.",
+      "rating": 4,
+      "text": "Kullanımı kolay ve verimli bir makina. Ancak kurulum için daha detaylı bilgi olabilirdi."
+    },
+    {
+      "author": "Mehmet B.",
+      "rating": 5,
+      "text": "Satıcı ilgiliydi. Ürün tam anlatıldığı gibi. Tavsiye ederim."
+    }
+  ],
+
+  "location": {
+    "address": "İkitelli OSB Mah. Eski Turgut Özal Cd. No:88, Başakşehir / İstanbul",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12033.2462220389!2d28.793055!3d41.070474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3a17869e217%3A0xd7c1d853930f83aa!2zxLBraXRlbGxpIE9yZ2FuaXplIFNhbiBhew!5e0!3m2!1str!2str!4v1685555555555"
+  },
+
+  "documents": [
+    {
+      "title": "Ürün Kataloğu",
+      "url": "/docs/urun-katalogu.pdf"
+    },
+    {
+      "title": "Kullanım Kılavuzu",
+      "url": "/docs/kullanim-kilavuzu.pdf"
+    },
+    {
+      "title": "CE Sertifikası",
+      "url": "/docs/ce-sertifikasi.pdf"
+    }
+  ]
+  },
+
+  {
+    "id": 3,
+    "imageUrl": "applewatch.webp",
+    "altTitle": "Akıllı Saat",
+    "title": "Apple Watch Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple3",
+    "condition": "Yeni",
+    "listingNumber": "123458",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Akıllı Saat",
+    "listingDate": "2025-05-03",
+    "year": "2025",
+    "quantity": 7,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 6,
+    "rating": 4.8,
+    "images": ["applewatch.webp", "airpods.jpg", "iphone.webp", "applewatch.webp", "applewatch.webp","applewatch.webp", "applewatch.webp", "applewatch.webp", "applewatch.webp"],
+    "logoUrl": "procontlogo.png",
+     "description": "Bu ürün, ahşap kapı kasa ve pervazlarının profesyonelce boyanması için tasarlanmış endüstriyel bir makinedir. Tam otomatik boya püskürtme sistemi, paslanmaz çelik gövde ve 220V / 380V enerji ile çalışabilir. Tüm parçalar CE belgeli olup Türkiye'nin her yerine sevkiyat yapılır.",
+
+  "reviews": [
+    {
+      "author": "Ahmet Y.",
+      "rating": 5,
+      "text": "Ürün beklediğimden kaliteli. Hızlı kargo ve sağlam paketleme için teşekkürler."
+    },
+    {
+      "author": "Elif K.",
+      "rating": 4,
+      "text": "Kullanımı kolay ve verimli bir makina. Ancak kurulum için daha detaylı bilgi olabilirdi."
+    },
+    {
+      "author": "Mehmet B.",
+      "rating": 5,
+      "text": "Satıcı ilgiliydi. Ürün tam anlatıldığı gibi. Tavsiye ederim."
+    }
+  ],
+
+  "location": {
+    "address": "İkitelli OSB Mah. Eski Turgut Özal Cd. No:88, Başakşehir / İstanbul",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12033.2462220389!2d28.793055!3d41.070474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa3a17869e217%3A0xd7c1d853930f83aa!2zxLBraXRlbGxpIE9yZ2FuaXplIFNhbiBhew!5e0!3m2!1str!2str!4v1685555555555"
+  },
+
+  "documents": [
+    {
+      "title": "Ürün Kataloğu",
+      "url": "/docs/urun-katalogu.pdf"
+    },
+    {
+      "title": "Kullanım Kılavuzu",
+      "url": "/docs/kullanim-kilavuzu.pdf"
+    },
+    {
+      "title": "CE Sertifikası",
+      "url": "/docs/ce-sertifikasi.pdf"
+    }
+  ]
+  },
+  {
+    "id": 4,
+    "imageUrl": "airpods.jpg",
+    "altTitle": "Kulaklık",
+    "title": "Apple AirPods Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple4",
+    "condition": "Yeni",
+    "listingNumber": "123459",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Kulaklık",
+    "listingDate": "2025-05-04",
+    "year": "2025",
+    "quantity": 12,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 9,
+    "rating": 4.6,
+    "images": ["airpods.jpg", "airpods.jpg", "airpods.jpg", "airpods.jpg", "airpods.jpg","airpods.jpg", "airpods.jpg", "airpods.jpg", "airpods.jpg"],
+    "logoUrl": "procontlogo.png"
+  },
+  {
+    "id": 5,
+    "imageUrl": "airpods.jpg",
+    "altTitle": "Kulaklık",
+    "title": "Apple AirPods Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "İkinci El",
+    "listingNumber": "123460",
+    "seller": "Teknik Servis Ltd.",
+    "category": "Ev Yaşam",
+    "subCategory": "Vazo",
+    "listingDate": "2025-04-15",
+    "year": "2024",
+    "quantity": 5,
+    "priceDetails": "20.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 555 1234",
+      "phone2": "0532 123 45 67",
+      "whatsapp": "0532 123 45 67"
+    },
+
+    "views": 12,
+    "rating": 4.0,
+    "images": ["airpods.jpg", "applewatch.png", "iphone.webp", "airpods.jpg", "airpods.jpg","airpods.jpg", "airpods.jpg", "airpods.jpg", "airpods.jpg"],
+    "logoUrl": "procontlogo.png"
+  },
+  {
+    "id": 6,
+    "imageUrl": "iphone.webp",
+    "altTitle": "Telefon",
+    "title": "Apple iPhone Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123461",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Telefon",
+    "listingDate": "2025-05-05",
+    "year": "2025",
+    "quantity": 7,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 10,
+    "rating": 4.9,
+    "images": ["iphone.webp", "applewatch.png", "airpods.jpg", "iphone.webp", "iphone.webp","iphone.webp", "iphone.webp", "iphone.webp", "iphone.webp"],
+    "logoUrl": "procontlogo.png"
+  },
+  {
+    "id": 7,
+    "imageUrl": "applewatch.webp",
+    "altTitle": "Akıllı Saat",
+    "title": "Apple Watch Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123462",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Moda",
+    "subCategory": "Kadın",
+    "listingDate": "2025-05-06",
+    "year": "2025",
+    "quantity": 4,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 7,
+    "rating": 4.8,
+    "images": ["applewatch.webp"]
+  },
+  {
+    "id": 8,
+    "imageUrl": "airpods.jpg",
+    "altTitle": "Kulaklık",
+    "title": "Apple AirPods Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123463",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Kulaklık",
+    "listingDate": "2025-05-07",
+    "year": "2025",
+    "quantity": 8,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 6,
+    "rating": 4.5,
+    "images": ["airpods.jpg"]
+  },
+  {
+    "id": 9,
+    "imageUrl": "iphone.webp",
+    "altTitle": "Telefon",
+    "title": "Apple iPhone Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123464",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Ev Yaşam",
+    "subCategory": "Dekorasyon",
+    "listingDate": "2025-05-08",
+    "year": "2025",
+    "quantity": 15,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 9,
+    "rating": 4.7,
+    "images": ["iphone.webp"]
+  },
+  {
+    "id": 10,
+    "imageUrl": "applewatch.webp",
+    "altTitle": "Akıllı Saat",
+    "title": "Apple Watch Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123465",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Moda",
+    "subCategory": "Erkek",
+    "listingDate": "2025-05-09",
+    "year": "2025",
+    "quantity": 6,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 11,
+    "rating": 4.6,
+    "images": ["applewatch.webp"]
+  },
+  {
+    "id": 11,
+    "imageUrl": "airpods.jpg",
+    "altTitle": "Kulaklık",
+    "title": "Apple AirPods Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123466",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Ev Yaşam",
+    "subCategory": "Mutfak",
+    "listingDate": "2025-05-10",
+    "year": "2025",
+    "quantity": 9,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 5,
+    "rating": 4.9,
+    "images": ["airpods.jpg"]
+  },
+  {
+    "id": 12,
+    "imageUrl": "iphone.webp",
+    "altTitle": "Telefon",
+    "title": "Apple iPhone Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123467",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Ev Yaşam",
+    "subCategory": "Mobilya",
+    "listingDate": "2025-05-11",
+    "year": "2025",
+    "quantity": 11,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 13,
+    "rating": 4.8,
+    "images": ["iphone.webp"]
+  },
+  {
+    "id": 13,
+    "imageUrl": "applewatch.webp",
+    "altTitle": "Akıllı Saat",
+    "title": "Apple Watch Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123468",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Moda",
+    "subCategory": "Çocuk",
+    "listingDate": "2025-05-12",
+    "year": "2025",
+    "quantity": 3,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 8,
+    "rating": 4.6,
+    "images": ["applewatch.webp"]
+  },
+  {
+    "id": 14,
+    "imageUrl": "airpods.jpg",
+    "altTitle": "Kulaklık",
+    "title": "Apple AirPods Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123469",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Kulaklık",
+    "listingDate": "2025-05-13",
+    "year": "2025",
+    "quantity": 14,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 14,
+    "rating": 4.9,
+    "images": ["airpods.jpg"]
+  },
+  {
+    "id": 15,
+    "imageUrl": "iphone.webp",
+    "altTitle": "Telefon",
+    "title": "Apple iPhone Pro",
+    "price": "49.999",
+    "reviewCount": 78,
+
+    "brand": "Apple",
+    "condition": "Yeni",
+    "listingNumber": "123470",
+    "seller": "Soylu otomasyon san tic ltd şti",
+    "category": "Elektronik",
+    "subCategory": "Akıllı Telefon",
+    "listingDate": "2025-05-14",
+    "year": "2025",
+    "quantity": 20,
+    "priceDetails": "24.000 TL / Dolar / Euro",
+
+    "contact": {
+      "phone1": "+90 212 564 5858",
+      "phone2": "0532 456 88 88",
+      "whatsapp": "0532 456 88 88"
+    },
+
+    "views": 17,
+    "rating": 5.0,
+    "images": ["iphone.webp"]
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "links": [
+    {
+      "title": "Hızlı Linkler",
+      "items": [
+        { "label": "Anasayfa", "path": "/" },
+        { "label": "Hakkımızda", "path": "/hakkimizda" },
+        { "label": "Hizmetler", "path": "#" }
+      ]
+    },
+    {
+      "title": "Kaynaklar",
+      "items": [
+        { "label": "Ekibimiz", "path": "/ekibimiz" },
+        { "label": "Kariyer", "path": "/kariyer" },
+        { "label": "Gizlilik Politikası", "path": "/gizlilik-politikasi" },
+        { "label": "Biz Kimiz", "path": "/bizkimiz" }
+      ]
+    },
+    {
+      "title": "Yardım",
+      "items": [
+        { "label": "Yardım & Destek", "path": "/yardim" },
+        { "label": "Sıkça Sorulan Sorular", "path": "/sss" },
+        { "label": "İletişim", "path": "/iletisim" }
+      ]
+    }
+  ],
+  "social": [
+    { "label": "X", "url": "#", "icon": "x.png" },
+    { "label": "Facebook", "url": "#", "icon": "facebook.png" },
+    { "label": "YouTube", "url": "#", "icon": "youtube.png" },
+    { "label": "Instagram", "url": "#", "icon": "instagram.png" },
+    { "label": "LinkedIn", "url": "#", "icon": "linkedin-logo.png" }
+  ],
+  "contact": {
+    "text": "Hemen bir mağaza oluşturarak satışa başlayın.",
+    "cta": { "label": "Mağaza Oluştur", "url": "#/magaza" },
+    "phone": "+90 212 333 33 33",
+    "email": "support@siteniz.com"
+  }
+}

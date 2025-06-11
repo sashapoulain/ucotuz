@@ -1,33 +1,28 @@
-import React from "react";
+
+
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import sliderData from "../data/campaigns.json"; 
+
 import banner1 from "../assets/images/slider/banner-img.png";
 import banner2 from "../assets/images/slider/banner-img.png";
 import banner3 from "../assets/images/slider/banner-img.png";
 
-const sliderItems = [
-  {
-    title: "",
-    discount: "SEPETTE %20 İNDİRİM",
-    description: "Yüksek performans, yüksek tasarruf şimdi seni bekliyor2!",
-    image: banner1,
-  },
-  {
-    title: "",
-    discount: "SEPETTE %25 İNDİRİM",
-    description: "Yüksek performans, yüksek tasarruf şimdi seni bekliyor!",
-    image: banner2,
-  },
-  {
-    title: "PETLAS İNDİRİMİ 3.slider",
-    discount: "SEPETTE %15 İNDİRİM",
-    description: "Petlas lastiklerde bu haftaya özel indirim fırsatını kaçırma!",
-    image: banner3,
-  },
-];
+const imagesMap = {
+  1: banner1,
+  2: banner2,
+  3: banner3,
+};
 
 const CampaignSlider = () => {
+  const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+    setSlides(sliderData);
+  }, []);
+
   const settings = {
     infinite: true,
     arrows: false,
@@ -40,16 +35,16 @@ const CampaignSlider = () => {
   };
 
   return (
-    <div className="campaign-slider-wrapper container" style={{ paddingRight: '0', paddingLeft: '0'}}>
+    <div className="campaign-slider-wrapper container px-0">
       <Slider {...settings}>
-        {sliderItems.map((item, index) => (
-          <div key={index} className="container p-0">
+        {slides.map(({ id, title, discount, description }) => (
+          <div key={id} className="container p-0">
             <div className="row align-items-center p-0">
               <div className="col-12 col-md-5 campain-text-wrapper">
                 <div className="campaign-text">
-                  <h5>{item.title}</h5>
-                  <h2>{item.discount}</h2>
-                  <p>{item.description}</p>
+                  <h5>{title}</h5>
+                  <h2>{discount}</h2>
+                  <p>{description}</p>
                   <button className="campaign-button me-2">
                     ŞİMDİ DAHA FAZLASI <span>→</span>
                   </button>
@@ -59,11 +54,11 @@ const CampaignSlider = () => {
                 </div>
               </div>
               <div className="col-12 col-md-7 text-center campain-img-wrapper">
-              <img
-                    src={item.image}
-                    alt={`Slide ${index}`}
-                    className="img-fluid"
-                  />
+                <img
+                  src={imagesMap[id]}
+                  alt={`Slide ${id}`}
+                  className="img-fluid"
+                />
               </div>
             </div>
           </div>
@@ -74,3 +69,4 @@ const CampaignSlider = () => {
 };
 
 export default CampaignSlider;
+

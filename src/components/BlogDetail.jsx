@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { blogPosts } from "../data/blogData";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
@@ -11,17 +11,40 @@ import CommentForm from "./CommentForm";
 
 const BlogDetail = () => {
    const { id } = useParams();
-   const blog = blogPosts.find((item) => item.id === parseInt(id));
+   const [blog, setBlog] = useState(null);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(null);
 
-   if (!blog) {
-      return <div className="text-danger">Blog bulunamadı.</div>;
-   }
+   useEffect(() => {
+      setLoading(true);
+      setError(null);
+
+      try {
+         const foundBlog = blogPosts.find((item) => item.id === parseInt(id));
+
+         if (!foundBlog) {
+            setError("Blog bulunamadı.");
+         } else {
+            setBlog(foundBlog);
+         }
+      } catch (err) {
+         console.error(err); 
+         setError("Bir hata oluştu.");
+      } finally {
+         setLoading(false);
+      }
+   }, [id]);
+
+   if (loading) return <div>Yükleniyor...</div>;
+
+   if (error) return <div className="text-danger">{error}</div>;
+
+   if (!blog) return null;
 
    return (
       <div>
          <div className="bg-white shadow-sm rounded p-4 mb-4">
             <h2 className="mb-3">{blog.title}</h2>
-
             <div className="d-flex align-items-center gap-3 mb-3 flex-wrap">
                <img
                   src={blog.authorImage}
@@ -55,22 +78,15 @@ const BlogDetail = () => {
             <hr />
             <div className="d-flex justify-content-between align-items-center flex-wrap">
                <span className="badge bg-success text-white">{blog.tag}</span>
-
                <div className="d-flex align-items-center gap-2 mt-2 mt-md-0">
                   <span className="me-2 text-muted small fw-semibold">Paylaş:</span>
-                  <a href="#" className="d-inline-block">
-                     <img src={facebookIcon} alt="Facebook" style={{ width: "24px", height: "24px" }} />
-                  </a>
-                  <a href="#" className="d-inline-block">
-                     <img src={twitterIcon} alt="Twitter" style={{ width: "24px", height: "24px" }} />
-                  </a>
-                  <a href="#" className="d-inline-block">
-                     <img src={linkedinIcon} alt="LinkedIn" style={{ width: "24px", height: "24px" }} />
-                  </a>
+                  <a href="#"><img src={facebookIcon} alt="Facebook" style={{ width: "24px" }} /></a>
+                  <a href="#"><img src={twitterIcon} alt="Twitter" style={{ width: "24px" }} /></a>
+                  <a href="#"><img src={linkedinIcon} alt="LinkedIn" style={{ width: "24px" }} /></a>
                </div>
             </div>
-
          </div>
+
          <div className="bg-white shadow-sm rounded p-4">
             <AuthorInfo
                author={blog.author}
@@ -80,18 +96,14 @@ const BlogDetail = () => {
          </div>
 
          <div className="bg-white shadow-sm rounded p-4">
-         <CommentForm />
+            <CommentForm />
          </div>
-  
 
          <div className="mt-4">
             <h5 className="mb-3">Diğer Yazılar</h5>
             <BlogList showFeatured={false} />
          </div>
-        
       </div>
-
-
    );
 };
 

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "",
+    "discount": "SEPETTE %20 İNDİRİM",
+    "description": "Yüksek performans, yüksek tasarruf şimdi seni bekliyor2!"
+  },
+  {
+    "id": 2,
+    "title": "",
+    "discount": "SEPETTE %25 İNDİRİM",
+    "description": "Yüksek performans, yüksek tasarruf şimdi seni bekliyor!"
+  },
+  {
+    "id": 3,
+    "title": "PETLAS İNDİRİMİ 3.slider",
+    "discount": "SEPETTE %15 İNDİRİM",
+    "description": "Petlas lastiklerde bu haftaya özel indirim fırsatını kaçırma!"
+  }
+]

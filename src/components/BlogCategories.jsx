@@ -1,60 +1,16 @@
 import React, { useState } from "react";
 import { FaCircle } from "react-icons/fa";
 
-const blogCats = [
-  {
-    name: "Tasarım",
-    count: 12,
-    subcategories: ["Grafik Tasarım", "Web Tasarım", "Logo Tasarım"],
-  },
-  {
-    name: "Yazılım",
-    count: 8,
-    subcategories: ["Frontend", "Backend", "Full Stack"],
-  },
-  {
-    name: "E-Ticaret",
-    count: 15,
-    subcategories: ["Shopify", "WooCommerce"],
-  },
-  {
-    name: "Pazarlama",
-    count: 10,
-    subcategories: ["Dijital Pazarlama", "E-posta Pazarlama", "SEO"],
-  },
-  {
-    name: "Fotoğrafçılık",
-    count: 7,
-    subcategories: ["Portre", "Ürün", "Düğün"],
-  },
-  {
-    name: "Veri Bilimi",
-    count: 5,
-    subcategories: ["Makine Öğrenmesi", "Python", "Veri Görselleştirme"],
-  },
-  {
-    name: "Girişimcilik",
-    count: 6,
-    subcategories: [],
-  },
-  {
-    name: "Mobil Uygulama",
-    count: 4,
-    subcategories: ["iOS", "Android", "React Native"],
-  },
-  {
-    name: "UI/UX",
-    count: 9,
-    subcategories: ["Wireframe", "Prototip", "Kullanıcı Testi"],
-  },
-];
-
-const BlogCategories = () => {
+const BlogCategories = ({ categories }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleCategory = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  if (!categories || categories.length === 0) {
+    return <p>Kategori bulunamadı.</p>;
+  }
 
   return (
     <div className="p-4 shadow-sm rounded bg-white">
@@ -63,7 +19,7 @@ const BlogCategories = () => {
         className="list-unstyled category-list"
         style={{ maxHeight: "300px", overflowY: "auto" }}
       >
-        {blogCats.map((category, index) => (
+        {categories.map((category, index) => (
           <li
             key={index}
             className="mb-2"

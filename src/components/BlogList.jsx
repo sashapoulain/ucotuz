@@ -1,15 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { blogPosts } from "../data/blogData";
 
 const BlogList = ({ showFeatured = true }) => {
-  const featuredPost = blogPosts[0];
-  const otherPosts = blogPosts.slice(1);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      import("../data/blogData").then((module) => {
+        setPosts(module.blogPosts);
+        setLoading(false);
+      });
+    } catch (err) {
+      console.error("Blog verisi alınırken hata:", err);
+      setError("Blog listesi yüklenemedi.");
+      setLoading(false);
+    }
+  }, []);
+
+  if (loading) {
+    return <div className="text-center text-muted">Yükleniyor...</div>;
+  }
+
+  if (error) {
+    return <div className="text-danger">{error}</div>;
+  }
+
+  const featuredPost = posts[0];
+  const otherPosts = posts.slice(1);
 
   return (
     <div className="row">
-      {showFeatured && (
+      {showFeatured && featuredPost && (
         <div className="col-12 mb-4 mt-3 mt-md-0">
           <div className="d-flex flex-column flex-md-row gap-3 p-3 shadow-sm bg-white rounded">
             <div>
@@ -54,7 +78,6 @@ const BlogList = ({ showFeatured = true }) => {
                   style={{ height: "auto", objectFit: "cover" }}
                 />
                 <div className="card-body d-flex flex-column">
-                  {/* <span className="badge bg-secondary text-white mb-2 d-block">{post.tag}</span> */}
                   <h6 className="card-title mt-4">{post.title}</h6>
                   <p className="card-text text-muted small flex-grow-1">{post.description}</p>
                   <div className="d-flex justify-content-between align-items-center mt-2 small text-muted" style={{ fontSize: "0.73rem" }}>

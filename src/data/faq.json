@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Ürünü nasıl sipariş verebilirim?",
+    "answer": "İlgilendiğiniz ürün sayfasında yer alan 'Teklif Gönder' ya da 'Satıcıyla İletişime Geç' butonlarını kullanarak sipariş sürecini başlatabilirsiniz."
+  },
+  {
+    "question": "Kargo ve teslimat süresi nedir?",
+    "answer": "Teslimat süresi ürünün bulunduğu konuma ve satıcıya göre değişmektedir. Detaylı bilgi için satıcıyla iletişime geçebilirsiniz."
+  },
+  {
+    "question": "İade şartları nelerdir?",
+    "answer": "İade koşulları her satıcıya göre farklılık gösterebilir. Lütfen ürün detaylarında iade bilgilerini kontrol ediniz."
+  }
+]

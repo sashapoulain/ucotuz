@@ -1,25 +1,24 @@
-import React from "react";
 
-const faqItems = [
-  {
-    question: "Ürünü nasıl sipariş verebilirim?",
-    answer: "İlgilendiğiniz ürün sayfasında yer alan 'Teklif Gönder' ya da 'Satıcıyla İletişime Geç' butonlarını kullanarak sipariş sürecini başlatabilirsiniz.",
-  },
-  {
-    question: "Kargo ve teslimat süresi nedir?",
-    answer: "Teslimat süresi ürünün bulunduğu konuma ve satıcıya göre değişmektedir. Detaylı bilgi için satıcıyla iletişime geçebilirsiniz.",
-  },
-  {
-    question: "İade şartları nelerdir?",
-    answer: "İade koşulları her satıcıya göre farklılık gösterebilir. Lütfen ürün detaylarında iade bilgilerini kontrol ediniz.",
-  },
-  {
-    question: "Ürün garantisi var mı?",
-    answer: "Garanti durumu ürün açıklamalarında belirtilmiştir. Ek bilgi için satıcıya danışabilirsiniz.",
-  },
-];
+import React, { useState, useEffect } from "react";
+import faqData from "../data/faq.json";
 
 const FaqSection = ({ showTitle = false }) => {
+  const [faqs, setFaqs] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    try {
+      setFaqs(faqData);
+    } catch (err) {
+      setError("SSS verileri yüklenemedi.");
+      console.error(err);
+    }
+  }, []);
+
+  if (error) {
+    return <div className="alert alert-danger">{error}</div>;
+  }
+
   return (
     <div className="my-5">
       {showTitle && (
@@ -28,7 +27,7 @@ const FaqSection = ({ showTitle = false }) => {
         </h4>
       )}
       <div className="accordion" id="faqAccordion">
-        {faqItems.map((item, index) => (
+        {faqs.map((item, index) => (
           <div className="accordion-item border rounded mb-3" key={index}>
             <h2 className="accordion-header" id={`heading${index}`}>
               <button

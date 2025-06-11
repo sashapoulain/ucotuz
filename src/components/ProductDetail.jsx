@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import proImg from "../assets/images/products/applewatch.png";
-import procontlogo from "../assets/images/products/procontlogo.png";
 import Thumbs from "../components/Thumbs";
 import heart from "../assets/images/products/heart.png";
 import Breadcrumb from "./BreadCrumb";
@@ -10,15 +8,22 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import ProductTabs from "./ProductTabs";
 import FaqSection from "./FaqSection";
+import productsData from "../data/products.json";
+import ProductDetailTable from "./ProductDetailTable"; 
 
 const ProductDetail = () => {
-  const [selectedImage, setSelectedImage] = useState(proImg);
+  const product = productsData[0]; 
+
+  const [selectedImage, setSelectedImage] = useState(
+    `/ucotuz/images/productImgs/${product.imageUrl}`
+  );
+
   const breadcrumbItems = [
     { icon: <Home size={18} />, href: "/", label: null },
-    { label: "Ahşap", href: "/ahsap" },
-    { label: "Mobilya", href: "/mobilya" },
-    { label: "Kabin Makinası" },
+    { label: product.category, href: `/${product.category.toLowerCase()}` },
+    { label: product.title },
   ];
+
   return (
     <div className="container mt-4">
       <div className="row">
@@ -37,7 +42,7 @@ const ProductDetail = () => {
           <img
             src={selectedImage}
             className="img-fluid rounded pro-img"
-            alt="Product"
+            alt={product.altTitle || product.title}
             style={{
               border: "3px solid #dddddd",
               background: "white",
@@ -53,115 +58,64 @@ const ProductDetail = () => {
               padding: "8px",
             }}
           >
-            <img src={heart} alt="" />
+            <img src={heart} alt="Favorilere ekle" />
           </button>
           <div className="d-flex mt-3 products-thumbs">
-            <Thumbs onSelect={setSelectedImage} />
+            <Thumbs
+              images={product.images.map(
+                (img) => `/ucotuz/images/productImgs/${img}`
+              )}
+              onSelect={setSelectedImage}
+              selectedImage={selectedImage}
+            />
           </div>
         </div>
 
         <div className="col-md-4">
-          <h4>Kapı Kasa Ve Pervaz Boyama Kabini ve Makinası</h4>
+          <h4>{product.title}</h4>
           <div className="d-flex align-items-center mb-2">
-            <span className="text-warning">★★★★★</span>
-            <small className="ms-2 text-success">(76)</small>
-            <span className="ms-3">Görüntülenme (5)</span>
+            <span className="text-warning">
+              {"★".repeat(Math.floor(product.rating))}
+              {product.rating % 1 !== 0 && "½"}
+              {"☆".repeat(4 - Math.floor(product.rating))}
+            </span>
+            <small className="ms-2 text-success">({product.reviewCount})</small>
+            <span className="ms-3">Görüntülenme ({product.views})</span>
           </div>
-          <div className="detail-table-wrapper">
-            <table className="table table-borderless detail-table mb-0">
-              <tbody>
-                <tr>
-                  <td>Marka</td>
-                  <td>:</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Durumu</td>
-                  <td>:</td>
-                  <td className="text-success">Yeni</td>
-                </tr>
-                <tr>
-                  <td>İlan No</td>
-                  <td>:</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Kimden</td>
-                  <td>:</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Kategori</td>
-                  <td>:</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>İlan Tarihi</td>
-                  <td>:</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Yılı</td>
-                  <td>:</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Adet</td>
-                  <td>:</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  <td>Fiyat</td>
-                  <td>:</td>
-                  <td>24.000 TL / Dolar / Euro</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <ProductDetailTable product={product} />
         </div>
 
         <div className="col-md-3">
-          <div className="p-3  mb-3 pro-contact">
+          <div className="p-3 mb-3 pro-contact">
             <div className="text-center mt-2 mb-2">
-              <img src={procontlogo} alt="" style={{ width: 100 }} />
-              <h6 className="fw-bold pt-2">
-                Soylu otomasyon
-                <br />
-                san tic ltd şti
-              </h6>
+              <img
+  src={`/ucotuz/images/productImgs/${product.logoUrl}`}
+  alt={`${product.seller} Logo`}
+  style={{ width: 100 }}
+/>
+
+              <h6 className="fw-bold pt-2">{product.seller}</h6>
             </div>
             <hr />
             <p className="mb-1">
               <strong>İletişim</strong>
             </p>
-            {/* <p className="mb-1">
+
+            <p className="mb-1 phone-hover">
               <strong>
                 <FaPhoneAlt size={16} />
               </strong>{" "}
-              +90 212 564 5858
+              <span className="masked-phone">+90 212 xxx xx xx</span>
+              <span className="real-phone">{product.contact.phone1}</span>
             </p>
-            <p className="mb-1">
+
+            <p className="mb-1 phone-hover">
               <strong>
                 <FaPhoneAlt size={18} />
               </strong>{" "}
-              0532 456 88 88
-            </p> */}
-
-            <p className="mb-1 phone-hover">
-  <strong>
-    <FaPhoneAlt size={16} />
-  </strong>{" "}
-  <span className="masked-phone">+90 212 xxx xx xx</span>
-  <span className="real-phone">+90 212 564 5858</span>
-</p>
-
-<p className="mb-1 phone-hover">
-  <strong>
-    <FaPhoneAlt size={18} />
-  </strong>{" "}
-  <span className="masked-phone">0532 xxx xx xx</span>
-  <span className="real-phone">0532 456 88 88</span>
-</p>
+              <span className="masked-phone">0532 xxx xx xx</span>
+              <span className="real-phone">{product.contact.phone2}</span>
+            </p>
 
             <hr />
             <button
@@ -171,7 +125,7 @@ const ProductDetail = () => {
               <strong>
                 <IoLogoWhatsapp size={18} />
               </strong>{" "}
-              0532 456 88 88
+              {product.contact.whatsapp}
             </button>
             <button
               className="btn btn-outline-success btn-sm w-100 fw-bold mb-2"
@@ -188,7 +142,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <ProductTabs />
+      <ProductTabs product={product} />
       <FaqSection showTitle={true} />
     </div>
   );

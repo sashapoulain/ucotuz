@@ -1,3 +1,30 @@
+
+ .package-title{
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: rgb(88, 111, 124);
+
+ }
+ .btn-custom-package {
+  background: linear-gradient(135deg, #198754, #28a745);
+  color: white;
+  border: none;
+}
+.btn-custom-package:hover {
+  opacity: 0.9;
+}
+
+.bordernone:focus-visible{
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.deneme{
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+}
 .category-list a:hover {
   text-decoration: underline;
 }
@@ -226,6 +253,18 @@
 /* ProductTab css */
 
 /*productdetail css*/
+.t-wrapper{
+  margin-left: 1.5rem;
+}
+.pro-img {
+  width: 100%;
+  max-width: 520px !important;   /* Masaüstünde max genişlik */
+  height: 470px !important;      /* Masaüstü sabit yükseklik */
+  object-fit: contain;
+  border: 3px solid #ddd;
+  background: white;
+}
+
 .phone-hover .real-phone {
   display: none;
 }
@@ -562,6 +601,7 @@ footer li a {
   left: 10px;
   background: linear-gradient(145deg, #016fb9, rgba(43, 153, 255, 0.90));
   color: white;
+  position: absolute;
 }
 
 .badge-right {
@@ -569,6 +609,7 @@ footer li a {
   right: 10px;
   background: linear-gradient(90deg, #b8dbd9, #b8dbd9);
   color: #04724d !important;
+  position: absolute;
 }
 
 .heart-button {
@@ -822,5 +863,12 @@ footer li a {
 
   .custom-tabs::-webkit-scrollbar {
     display: none;
+  }
+  .pro-img {
+    max-width: 100% !important;  /* Mobilde tam genişlik */
+    height: auto !important;     /* Oran bozulmadan otomatik yükseklik */
+  }
+  .t-wrapper {
+    margin-left: 0 !important;
   }
 }

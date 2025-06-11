@@ -1,0 +1,34 @@
+[
+  {
+    "seller": {
+      "name": "SPONSORLU SATICI",
+      "avatar": "https://i.pravatar.cc/40?img=12"
+    },
+    "products": [
+      {
+        "title": "Apple AirPods Pro",
+        "image": "/ucotuz/images/sponsored/airpods.jpg",
+        "reviewCount": 76,
+        "price": "49.999"
+      },
+      {
+        "title": "Apple iPhone 15",
+        "image": "/ucotuz/images/sponsored/iphone.webp",
+        "reviewCount": 120,
+        "price": "89.999"
+      },
+      {
+        "title": "Apple Watch Series 9",
+        "image": "/ucotuz/images/sponsored/applewatch.webp",
+        "reviewCount": 34,
+        "price": "29.999"
+      },
+      {
+        "title": "AirPods Max",
+        "image": "/ucotuz/images/sponsored/airpods.jpg",
+        "reviewCount": 22,
+        "price": "59.999"
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+body .goog-te-banner-frame.skiptranslate,
+body .goog-te-gadget,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-text-highlight {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}

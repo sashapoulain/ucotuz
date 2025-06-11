@@ -1,87 +1,86 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import brandsData from "../data/brands.json";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import logo1 from "../assets/images/brands/puma.png";
-import logo2 from "../assets/images/brands/apple.jpg";
-import logo3 from "../assets/images/brands/adidas.jpg";
-import logo4 from "../assets/images/brands/puma.png";
-import logo5 from "../assets/images/brands/puma.png";
-import logo6 from "../assets/images/brands/puma.png";
-import logo7 from "../assets/images/brands/puma.png";
-import logo8 from "../assets/images/brands/puma.png";
-import logo9 from "../assets/images/brands/puma.png";
-import logo10 from "../assets/images/brands/puma.png";
-import logo11 from "../assets/images/brands/puma.png";
-import logo12 from "../assets/images/brands/puma.png";
-
-const brands = [
-  logo1,
-  logo2,
-  logo3,
-  logo4,
-  logo5,
-  logo6,
-  logo7,
-  logo8,
-  logo9,
-  logo10,
-  logo11,
-  logo12,
-];
+import puma from "../assets/images/brands/puma.png";
+import apple from "../assets/images/brands/apple.jpg";
+import adidas from "../assets/images/brands/adidas.jpg";
+import nike from "../assets/images/brands/adidas.jpg";
+import samsung from "../assets/images/brands/apple.jpg";
+import sony from "../assets/images/brands/puma.png";
+import lg from "../assets/images/brands/puma.png";
+import microsoft from "../assets/images/brands/apple.jpg";
+import google from "../assets/images/brands/adidas.jpg";
+import xiaomi from "../assets/images/brands/puma.png";
+const logosMap = {
+  puma,
+  apple,
+  adidas,
+  nike,
+  samsung,
+  sony,
+  lg,
+  microsoft,
+  google,
+  xiaomi
+};
 
 const BrandCarousel = () => {
+  const [brands, setBrands] = useState([]);
+  const [boxSize, setBoxSize] = useState(90); 
+
+  useEffect(() => {
+    setBrands(brandsData);
+
+    // Ekran boyutuna göre boxSize ayarla
+    const handleResize = () => {
+      setBoxSize(window.innerWidth < 576 ? 80 : 90); 
+    };
+
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const settings = {
     infinite: true,
     slidesToShow: 12,
     slidesToScroll: 2,
     arrows: true,
     responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 11,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 11,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 9,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 5,
-        },
-      },
+      { breakpoint: 1200, settings: { slidesToShow: 10 } },
+      { breakpoint: 992, settings: { slidesToShow: 8 } },
+      { breakpoint: 768, settings: { slidesToShow: 6 } },
+      { breakpoint: 576, settings: { slidesToShow: 4 } },
+      { breakpoint: 400, settings: { slidesToShow: 3 } },
     ],
   };
 
   return (
     <div className="my-4 px-3 container">
       <Slider {...settings}>
-        {brands.map((logo, index) => (
-          <div key={index} className="d-flex justify-content-center">
+        {brands.map(({ id, name }) => (
+          <div key={id} className="d-flex justify-content-center">
             <div
               className="rounded-circle border d-flex justify-content-center align-items-center bg-white"
               style={{
-                width: 90,
-                height: 90,
+                width: boxSize,
+                height: boxSize,
                 overflow: "hidden",
               }}
             >
               <img
-                src={logo}
-                alt={`Brand ${index}`}
-                style={{ width: "90%", height: "auto" }}
+                src={logosMap[name.toLowerCase()]}
+                alt={name}
+                style={{
+                  width: "90%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
               />
             </div>
           </div>

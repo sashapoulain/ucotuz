@@ -2,7 +2,7 @@
 import './App.css'
 import { Button } from 'reactstrap';
 import './assets/css/style.css';
-import Header from './components/Header';
+import Header from './components/Header/Header.jsx';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import BrandCarousel from './components/BrandCarousel';
@@ -28,7 +28,7 @@ import BlogList from './components/BlogList'
 import LoginRegister from './pages/LoginRegister';
 import Store from './pages/Store'
 import CookieConsent from './components/CookieConsent';
-
+import Pricing from './pages/Pricing';
 
 
 function App() {
@@ -67,7 +67,7 @@ function App() {
         </Route>
         <Route path="/giris" element={<LoginRegister />} />
         <Route path="/magaza" element={<Store />} />
-
+        <Route path="/pricing" element={<Pricing />} />
 
 
 

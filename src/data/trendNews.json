@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Trend haber başlığı 1",
+    "date": "Mayıs 31, 2025",
+    "readTime": "3 kere okundu",
+    "image": "/images/productImgs/airpods.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Trend haber başlığı 2",
+    "date": "Mayıs 30, 2025",
+    "readTime": "2 kere okundu",
+    "image": "/images/productImgs/airpods.jpg"
+  }
+]
