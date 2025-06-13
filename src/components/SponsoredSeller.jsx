@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import { Link } from "react-router-dom";
 import sponsoredData from "../data/sponsoredProducts.json";
@@ -24,7 +27,7 @@ const SponsoredSeller = () => {
             <button className="btn btn-outline-success btn-md">Takip Et</button>
           </div>
 
-          <div className="row g-0 rounded overflow-hidden">
+          <div className="row d-none d-md-flex g-0 rounded overflow-hidden">
             {sellerData.products.map((product, index) => (
               <div
                 key={index}
@@ -52,6 +55,34 @@ const SponsoredSeller = () => {
                 </Link>
               </div>
             ))}
+          </div>
+
+          <div className="d-md-none overflow-auto">
+            <div className="d-flex flex-nowrap">
+              {sellerData.products.map((product, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 me-3 bg-light p-2 rounded"
+                  style={{ width: "200px" }}
+                >
+                  <Link
+                    to={`/product/${encodeURIComponent(product.title)}`}
+                    className="text-decoration-none text-dark"
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      className="img-fluid mb-2 rounded"
+                    />
+                    <div className="fw-semibold">{product.title}</div>
+                    <div className="text-muted small">
+                      ({product.reviewCount} Yorum)
+                    </div>
+                    <div className="fw-bold">{product.price} TL</div>
+                  </Link>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ))}

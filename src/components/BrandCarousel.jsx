@@ -35,7 +35,6 @@ const BrandCarousel = () => {
   useEffect(() => {
     setBrands(brandsData);
 
-    // Ekran boyutuna göre boxSize ayarla
     const handleResize = () => {
       setBoxSize(window.innerWidth < 576 ? 80 : 90); 
     };
