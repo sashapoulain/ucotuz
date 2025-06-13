@@ -1,0 +1,38 @@
+{
+   "category": {
+    "vehicles": "Araçlar",
+    "trucks": "Kamyonlar",
+    "vans": "Minivanlar",
+    "pickups": "Pikaplar",
+    "agriculture": "Tarım Makineleri",
+    "tractors": "Traktörler",
+    "harvesters": "Biçerdöverler",
+    "electronics": "Elektronik",
+    "laptops": "Dizüstü Bilgisayarlar",
+    "smartphones": "Akıllı Telefonlar"
+  },
+  "signIn": "Giriş Yap",
+  "allCategories": "TÜM KATEGORİLER",
+  "scrollCategories": {
+    "women": "Kadın",
+    "men": "Erkek",
+    "motherChild": "Anne & Çocuk",
+    "homeLife": "Ev & Yaşam",
+    "supermarket": "Süpermarket",
+    "cosmetics": "Kozmetik",
+    "shoesBags": "Ayakkabı & Çanta",
+    "electronics": "Elektronik"
+  },
+  "menu": "Menü",
+  "searchPlaceholder": "Aradığınız ürün, kategori veya markayı yazınız",
+  "searchAriaLabel": "Arama kutusu",
+  "searchButtonAriaLabel": "Ara butonu",
+  "topLinks": {
+    "pricing": "Paketlerimiz",
+    "blog": "Blog",
+    "faq": "Sıkça Sorulan Sorular",
+    "openStore": "Mağaza Aç",
+    "support": "Yardım & Destek",
+    "returnPolicy": "İade Politikası"
+  }
+}
