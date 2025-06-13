@@ -1,15 +1,4 @@
-// const scrollCategories = [
-//   "Kadın",
-//   "Erkek",
-//   "Anne & Çocuk",
-//   "Ev & Yaşam",
-//   "Süpermarket",
-//   "Kozmetik",
-//   "Ayakkabı & Çanta",
-//   "Elektronik",
-// ];
 
-// export default scrollCategories;
 
 const scrollCategories = [
   { key: "women", label: "Kadın" },
