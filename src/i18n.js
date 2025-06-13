@@ -1,6 +1,4 @@
 
-
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -13,12 +11,18 @@ i18n
   .init({
     fallbackLng: 'tr',
     supportedLngs: ['tr', 'en', 'de'],
+    ns: ['about', 'header'], 
+    // defaultNS: 'common', 
     debug: true,
     interpolation: {
       escapeValue: false,
     },
     backend: {
-      loadPath: '/ucotuz/locales/{{lng}}/common.json', 
+      loadPath: '/ucotuz/locales/{{lng}}/{{ns}}.json', 
+    },
+    detection: {
+      order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+      caches: ['cookie'],
     },
   });
 

@@ -1,0 +1,38 @@
+{
+ "category": {
+    "vehicles": "Fahrzeuge",
+    "trucks": "Lastwagen",
+    "vans": "Transporter",
+    "pickups": "Pick-ups",
+    "agriculture": "Landmaschinen",
+    "tractors": "Traktoren",
+    "harvesters": "Mähdrescher",
+    "electronics": "Elektronik",
+    "laptops": "Laptops",
+    "smartphones": "Smartphones"
+  },
+  "signIn": "Anmelden",
+  "allCategories": "ALLE KATEGORIEN",
+  "scrollCategories": {
+    "women": "Damen",
+    "men": "Herren",
+    "motherChild": "Mutter & Kind",
+    "homeLife": "Haus & Leben",
+    "supermarket": "Supermarkt",
+    "cosmetics": "Kosmetik",
+    "shoesBags": "Schuhe & Taschen",
+    "electronics": "Elektronik"
+  },
+  "menu": "Menü",
+  "searchPlaceholder": "Geben Sie das Produkt, die Kategorie oder Marke ein, die Sie suchen",
+  "searchAriaLabel": "Suchfeld",
+  "searchButtonAriaLabel": "Suchknopf",
+  "topLinks": {
+    "pricing": "Unsere Pakete",
+    "blog": "Blog",
+    "faq": "Häufig gestellte Fragen",
+    "openStore": "Laden eröffnen",
+    "support": "Hilfe & Support",
+    "returnPolicy": "Rückgaberecht"
+  }
+}

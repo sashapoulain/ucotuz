@@ -1,10 +1,15 @@
-import React, { useState } from "react";
 
-export default function OffcanvasMenu({ categories, onClose }) {
+
+
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+
+export default function OffcanvasMenu({ categories, onClose, allCategoriesLabel }) {
+  const { t } = useTranslation();
   const [expandedCategory, setExpandedCategory] = useState(null);
 
   const toggleCategory = (index) => {
-    setExpandedCategory((prev) => (prev === index ? null : index));
+    setExpandedCategory(prev => (prev === index ? null : index));
   };
 
   return (
@@ -14,7 +19,7 @@ export default function OffcanvasMenu({ categories, onClose }) {
       style={{ zIndex: 2000 }}
     >
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title">Tüm Kategoriler</h5>
+        <h5 className="offcanvas-title">{allCategoriesLabel}</h5>
         <button type="button" className="btn-close" onClick={onClose}></button>
       </div>
       <div className="offcanvas-body">
@@ -25,14 +30,14 @@ export default function OffcanvasMenu({ categories, onClose }) {
               onClick={() => toggleCategory(index)}
               aria-expanded={expandedCategory === index}
             >
-              {cat.name}
+              {t(`categories.${cat.name}`)}
             </button>
             {expandedCategory === index && (
               <ul className="list-group ps-3">
                 {cat.sub.map((sub, idx) => (
                   <li key={idx} className="list-group-item border-0 ps-4">
                     <a href="#" className="text-decoration-none text-dark">
-                      {sub}
+                      {t(`categories.${sub}`)}
                     </a>
                   </li>
                 ))}
@@ -44,3 +49,6 @@ export default function OffcanvasMenu({ categories, onClose }) {
     </div>
   );
 }
+
+
+

@@ -1,7 +1,10 @@
+
 import React, { useState } from "react";
 import { Search } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function SearchBar() {
+  const { t } = useTranslation("header");
   const [query, setQuery] = useState("");
 
   const handleSubmit = (e) => {
@@ -14,15 +17,15 @@ export default function SearchBar() {
       <input
         type="text"
         className="form-control"
-        placeholder="Aradığınız ürün, kategori veya markayı yazınız"
+        placeholder={t("searchPlaceholder")}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        aria-label="Arama"
+        aria-label={t("searchAriaLabel")}
       />
       <button
         className="input-group-text bg-white border-start-0"
         type="submit"
-        aria-label="Ara"
+        aria-label={t("searchButtonAriaLabel")}
       >
         <Search size={16} />
       </button>

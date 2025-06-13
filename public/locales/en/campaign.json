@@ -1,0 +1,19 @@
+{
+  "campaign1": {
+    "title": "PETLAS DISCOUNT",
+    "description": "High performance, high savings await you now!",
+    "discount": "20% OFF IN CART"
+  },
+  "campaign2": {
+    "title": "SUMMER SPECIAL DEALS",
+    "description": "Summer discounts are waiting for you!",
+    "discount": "25% OFF IN CART"
+  },
+  "campaign3": {
+    "title": "TIRE CAMPAIGN",
+    "description": "Don’t miss this week’s special offer on Petlas tires!",
+    "discount": "15% OFF IN CART"
+  },
+   "more": "DISCOVER NOW",
+   "share": "SHARE"
+}

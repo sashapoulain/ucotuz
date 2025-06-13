@@ -1,15 +1,64 @@
+
+
 const categories = [
   {
-    name: "Elektronik1",
-    sub: ["Telefon1", "Bilgisayar1", "TV & Ses Sistemleri1"],
+    id: 1,
+    name: "category.vehicles",   
+    slug: "vehicles",            
+    icon: "🚗",                 
+    sub: [
+      {
+        id: 11,
+        name: "category.trucks",
+        slug: "trucks",
+      },
+      {
+        id: 12,
+        name: "category.vans",
+        slug: "vans",
+      },
+      {
+        id: 13,
+        name: "category.pickups",
+        slug: "pickups",
+      },
+    ],
   },
   {
-    name: "Moda1",
-    sub: ["Kadın1", "Erkek1", "Çocuk1"],
+    id: 2,
+    name: "category.agriculture",
+    slug: "agriculture",
+    icon: "🌾",
+    sub: [
+      {
+        id: 21,
+        name: "category.tractors",
+        slug: "tractors",
+      },
+      {
+        id: 22,
+        name: "category.harvesters",
+        slug: "harvesters",
+      },
+    ],
   },
   {
-    name: "Ev & Yaşam1",
-    sub: ["Mobilya1", "Dekorasyon1", "Mutfak1"],
+    id: 3,
+    name: "category.electronics",
+    slug: "electronics",
+    icon: "💻",
+    sub: [
+      {
+        id: 31,
+        name: "category.laptops",
+        slug: "laptops",
+      },
+      {
+        id: 32,
+        name: "category.smartphones",
+        slug: "smartphones",
+      },
+    ],
   },
 ];
 
