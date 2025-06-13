@@ -70,12 +70,12 @@ import { useTranslation } from 'react-i18next';
 // import i18n from "../i18n";
 const About = () => {
   const { t } = useTranslation();
-  const {i18n} = useTranslation();
+  // const {i18n} = useTranslation();
   return (
     <div className="container my-5 about">
       <div className="text-center mb-5">
-      <button onClick={() => i18n.changeLanguage('en')}>English</button>
-      <button onClick={() => i18n.changeLanguage('tr')}>Türkçe</button>
+      {/* <button onClick={() => i18n.changeLanguage('en')}>English</button>
+      <button onClick={() => i18n.changeLanguage('tr')}>Türkçe</button> */}
         <h1 className="about-title">{t('about.title')}</h1>
         <p className="lead text-muted">
           {t('about.subtitle')}
