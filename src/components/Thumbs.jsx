@@ -15,7 +15,7 @@ const Thumbs = ({ images = [], onSelect }) => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 5,
     slidesToScroll: 1,
     arrows: true,
     responsive: [
