@@ -30,26 +30,42 @@ const logosMap = {
 
 const BrandCarousel = () => {
   const [brands, setBrands] = useState([]);
-  const [boxSize, setBoxSize] = useState(90); 
+  const [boxSize, setBoxSize] = useState(90);
 
   useEffect(() => {
     setBrands(brandsData);
 
     const handleResize = () => {
-      setBoxSize(window.innerWidth < 576 ? 80 : 90); 
+      setBoxSize(window.innerWidth < 576 ? 80 : 90);
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // const settings = {
+  //   infinite: true,
+  //   slidesToShow: 12,
+  //   slidesToScroll: 2,
+  //   arrows: true,
+  //   responsive: [
+  //     { breakpoint: 1200, settings: { slidesToShow: 10 } },
+  //     { breakpoint: 992, settings: { slidesToShow: 8 } },
+  //     { breakpoint: 768, settings: { slidesToShow: 6 } },
+  //     { breakpoint: 576, settings: { slidesToShow: 4 } },
+  //     { breakpoint: 400, settings: { slidesToShow: 3 } },
+  //   ],
+  // };
   const settings = {
     infinite: true,
     slidesToShow: 12,
     slidesToScroll: 2,
     arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    pauseOnHover: true,
     responsive: [
       { breakpoint: 1200, settings: { slidesToShow: 10 } },
       { breakpoint: 992, settings: { slidesToShow: 8 } },
