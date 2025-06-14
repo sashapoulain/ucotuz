@@ -31,6 +31,20 @@ const PlanForm = ({ planId, formData, handleInputChange, handleSubmit }) => {
           required
         />
       </div>
+      <div className="mb-3">
+        <label htmlFor={`phone-${planId}`} className="form-label">
+          Telefon
+        </label>
+        <input
+          type="tel"
+          className="form-control"
+          id={`phone-${planId}`}
+          name="phone"
+          value={formData.phone}
+          onChange={handleInputChange}
+          required
+        />
+      </div>
       <button type="submit" className="btn btn-success">
         Gönder
       </button>

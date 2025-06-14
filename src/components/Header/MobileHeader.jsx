@@ -20,7 +20,8 @@ export default function MobileHeader({ language, handleLanguageChange }) {
 
   return (
     <>
-      <div className="d-block d-md-none border-bottom shadow-sm">
+    {  /* took d-md-none */}
+      <div className="d-block border-bottom shadow-sm">
         <div className="d-flex justify-content-between align-items-center px-3 py-2">
           <div className="d-flex align-items-center gap-2">
             <button

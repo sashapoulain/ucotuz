@@ -153,7 +153,7 @@ const Pricing = () => {
               style={{
                 cursor: "pointer",
                 minWidth: 0,
-                height: selectedPlanId === plan.id ? "800px" : "570px",
+                height: selectedPlanId === plan.id ? "900px" : "570px",
                 display: "flex",
                 flexDirection: "column",
               }}

@@ -69,7 +69,7 @@ const BlogList = ({ showFeatured = true }) => {
       <div className="p-2 rounded">
         <div className="row">
           {otherPosts.map((post) => (
-            <div key={post.id} className="col-md-4 mb-4">
+            <div key={post.id} className="col-md-6 col-xl-4 mb-4">
               <div className="card h-100 shadow-sm d-flex flex-column">
                 <img
                   src={post.image}
